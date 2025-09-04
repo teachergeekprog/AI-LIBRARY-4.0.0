@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind to use class-based dark mode
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <script>
+      // Set theme class before initial render to prevent flash
+      // 'dark' class corresponds to the 'autumn' theme
+      if (localStorage.getItem('theme') === 'autumn') {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <style>
+      /* For custom scrollbar styling */
+      /* Classic theme scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; /* slate-900 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #38bdf8; /* sky-400 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0ea5e9; /* sky-500 */
+      }
+      /* Autumn theme scrollbar (.dark) */
+      .dark ::-webkit-scrollbar-track {
+        background: #1c1917; /* stone-900 */
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #9a3412; /* orange-800 */
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #c2410c; /* orange-700 */
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-900 dark:bg-gradient-to-b dark:from-stone-950 dark:to-amber-950 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
